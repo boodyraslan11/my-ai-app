@@ -7,7 +7,7 @@ workflows:
       - name: Install dependencies
         script: npm install --legacy-peer-deps
       - name: Build web project
-        script: npm run build
+        script: npx vite build
       - name: Add and Sync Capacitor Android
         script: |
           npx cap init "My AI App" "com.example.myapp" --web-dir dist || true
