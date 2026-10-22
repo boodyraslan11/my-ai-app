@@ -1,0 +1,6 @@
+{
+  "appId": "com.example.myapp",
+  "appName": "My AI App",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

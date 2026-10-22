@@ -1,0 +1,6 @@
+{
+  "name": "Rackly - Smart Warehouse Navigation",
+  "description": "Smart Warehouse Navigation Android & Web Application. Find materials, navigate 2D warehouse layouts, scan QR bin locations, pick with validation, and perform inventory counting.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
