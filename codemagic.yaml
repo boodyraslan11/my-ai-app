@@ -4,19 +4,23 @@ workflows:
     max_build_duration: 60
     instance_type: mac_mini_m1
     environment:
-      node: latest
+      node: 18.x
     scripts:
       - name: Install dependencies
-        script: npm install
+        script: npm install --legacy-peer-deps
       - name: Build web project
         script: npm run build
+      - name: Install Capacitor CLI
+        script: npm install -g @capacitor/cli @capacitor/core
       - name: Add and Sync Capacitor Android
         script: |
+          npx cap init "My AI App" "com.example.myapp" --web-dir dist || true
           npx cap add android || true
           npx cap sync android
       - name: Build Android APK
         script: |
           cd android
+          chmod +x gradlew
           ./gradlew assembleDebug
     artifacts:
       - android/app/build/outputs/apk/debug/*.apk
